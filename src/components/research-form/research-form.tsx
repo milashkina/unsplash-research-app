@@ -10,12 +10,6 @@ export const ResearchForm: FC = () => {
 
   const [isLoad, setLoad] = useState( false)
   const {query,setQuery} = useContext(AppContext)
-  let data = {
-    total: null,
-    total_pages: null,
-    results: []
-  } as TqueryContext
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
