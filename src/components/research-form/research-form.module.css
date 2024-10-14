@@ -1,0 +1,32 @@
+.formContainer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 340px;
+    width: 100%;
+}
+.input {
+    border: 0;
+    background-color: #EEEEEE;
+    min-width: 228px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.inputContainer {
+    max-width: 420px;
+    padding: 10px 8px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #EEEEEE;
+}
+
+.clearIcon {
+    cursor: pointer;
+}
+
+.clearIcon:hover {
+    opacity: 0.7;
+}
