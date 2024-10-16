@@ -1,12 +1,29 @@
 import {FC} from "react";
 import style from "./result-list.module.css"
+import {useDispatch} from "react-redux";
+import {OPEN_DETAILS_MODAL} from "../../services/actions/app-action";
+import {selectResult} from "../../services/reducers/modal-reducer";
 
 export const ResultList: FC = ({data}) => {
-    console.log('ResultList: ',data)
+    const dispatch = useDispatch()
+   // console.log('ResultList: ',data)
+
+    function handleResultClick(el) {
+        dispatch(selectResult(el));
+        dispatch({type: OPEN_DETAILS_MODAL})
+    }
+
     return (
-        <section className={`grid sm:grid-cols-6 grid-cols-3 pt-8`}>
-            <div className={`${style.containerImg} rounded`}>i am a IMG</div>
-            <span>{data}</span>
+        <section className={`grid sm:grid-cols-6 grid-cols-3 gap-2 sm:pl-6 sm:pr-6 p-4`} >
+            {data.map((el) => (
+                <img
+                    className={`${style.containerImg} rounded`}
+                    loading={'lazy'}
+                    alt={`${el.alt_description}`}
+                    src={`${el.urls.small}`}
+                    onClick={() => handleResultClick(el)}
+                />
+            ))}
         </section>
     )
 }
