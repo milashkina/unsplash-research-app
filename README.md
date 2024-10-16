@@ -1,3 +1,20 @@
+Реализованный функционал:
+
+* получение картинок с апи Unsplash
+* показ первых 10ти результатов удовлетворяющих запросу
+* показ большой версии картинки в поп-апе
+    * закрыть одно можно либо на крестик, либо на пустое место 
+
+Стек: 
+
+* хранилище стейта - Redux
+* библиотека верстки tailwind css
+* webpack для сборки проекта
+* пакетный менеджер yarn
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,5 +1,6 @@
-
-
 .containerImg {
     border: 1px solid #EBEBEB;
+}
+.containerImg:hover {
+    cursor: pointer;
 }

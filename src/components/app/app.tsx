@@ -1,29 +1,35 @@
 
 import './app.css';
 import {ResearchForm} from "../research-form/research-form";
-import {ResultList} from "../result-list/result-list";
-import AppProvider, {AppContext,} from "../../services/appContext";
-import {useContext, useEffect} from "react";
+import AppProvider from "../../services/appContext";
+import {FC} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {Modal} from "../modal/modal";
+import {CLOSE_DETAILS_MODAL} from "../../services/actions/app-action";
+import {ModalDetails} from "../../pages/modal-details";
 
-function App() {
+export const App: FC = () => {
 
-    const {query} = useContext(AppContext)
+    const dispatch = useDispatch()
+    const modal = useSelector(state => state.modalStore)
+  //  console.log('isOpen:',modal.isOpen)
+    const handleClose = () => {
+        dispatch({
+            type: CLOSE_DETAILS_MODAL
+        });
+    }
 
-    useEffect(() => {
-        query?.results && console.log('app: ', query)
-    }, [query]);
-
-  return (
-    <div className="App">
-      <header className="App-header"/>
-      <main>
-          <AppProvider>
-              <ResearchForm/>
-              {query?.results && <ResultList data={query}/>}
-          </AppProvider>
-      </main>
-    </div>
-  );
+      return (
+        <div className="App">
+          <header className="App-header"/>
+          <main>
+              <AppProvider>
+                  <ResearchForm/>
+                  {modal.isOpen && <Modal onClose={handleClose}><ModalDetails/></Modal>}
+              </AppProvider>
+          </main>
+        </div>
+      );
 }
 
 export default App;
