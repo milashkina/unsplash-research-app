@@ -25,18 +25,16 @@ export const ResearchForm: FC = () => {
   }
 
   return (
-    <div>
-      <form className={`${style.formContainer}`} onSubmit={(e) => handleSubmit(e)}>
+    <div className={`p-4`}>
+      <form className={`${style.formContainer} gap-2`} onSubmit={(e) => handleSubmit(e)}>
         <div className={`${style.inputContainer} rounded-xl`}>
-          <span>
-            <img
-              loading={'lazy'}
-              src={GlassSearch}
-              width={20}
-              height={19}
-              alt={'icon glass'}
-              className={`${style}`}/>
-          </span>
+          <img
+            loading={'lazy'}
+            src={GlassSearch}
+            width={20}
+            height={19}
+            alt={'icon glass'}
+            className={`${style}`}/>
           <input
             type={'text'}
             name={'searchValue'}
@@ -45,16 +43,14 @@ export const ResearchForm: FC = () => {
             value={formValue as string || ''}
             onChange={(e) => handleChange(e)}
           />
-          <span>
-            <img
-              loading={'lazy'}
-              src={ClearForm}
-              width={19}
-              height={19}
-              alt={'button clear query'}
-              className={`${style.clearIcon}`}
-              onClick={() => clearForm()}/>
-          </span>
+          <img
+            loading={'lazy'}
+            src={ClearForm}
+            width={19}
+            height={19}
+            alt={'button clear query'}
+            className={`${style.clearIcon}`}
+            onClick={() => clearForm()}/>
         </div>
         <Button />
       </form>
