@@ -6,3 +6,7 @@ export const ENDPOINT = {
     RESEARCH: '/search/photos',
 }
 
+export const PATH = {
+    HOME: '/',
+    RESULT_PAGE: '/result-list'
+}

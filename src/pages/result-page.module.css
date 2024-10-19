@@ -1,0 +1,11 @@
+.container > form {
+    justify-content: start !important;
+}
+.error {
+    color: #787878;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+    font-family: Arial, serif;
+    text-align: left;
+}

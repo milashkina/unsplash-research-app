@@ -1,24 +1,17 @@
 .formContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 340px;
     width: 100%;
 }
 .input {
     border: 0;
     background-color: #EEEEEE;
-    min-width: 205px;
-    margin: 0 5px;
+    /*min-width: 180px;*/
     cursor: pointer;
 }
 
 .inputContainer {
-    max-width: 420px;
+   /* max-width: 420px;
+    min-width: 266px;*/
     padding: 10px 8px;
-    justify-content: space-between;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     background-color: #EEEEEE;
 }
 
