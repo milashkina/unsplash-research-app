@@ -14,14 +14,15 @@ export const ResultList: FC = ({data}) => {
     }
 
     return (
-        <section className={`grid sm:grid-cols-6 grid-cols-3 gap-2 sm:pl-6 sm:pr-6 p-4`} >
+        <section className={`grid sm:grid-cols-6 grid-cols-3 gap-2 items-center`} >
             {data.map((el) => (
                 <img
-                    className={`${style.containerImg} rounded`}
+                    className={`${style.img} rounded cursor-pointer`}
                     loading={'lazy'}
                     alt={`${el.alt_description}`}
                     src={`${el.urls.small}`}
                     onClick={() => handleResultClick(el)}
+                    id={el.id}
                 />
             ))}
         </section>

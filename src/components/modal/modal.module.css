@@ -6,3 +6,8 @@
 .clearIcon:hover {
     opacity: 0.7;
 }
+.img {
+    width: 760px;
+    height: 95vh;
+    object-fit: scale-down;
+}

@@ -31,7 +31,7 @@ export const Modal = (props : React.PropsWithChildren<IModal>) => {
           <ModalOverlay onClose={props.onClose}>
             <div onClick={(e) => {e.stopPropagation()}}>
               <img
-                  className={`${style.clearIcon} fixed right-0 top-0 pt-6 pr-6 cursor-pointer z-10`}
+                  className={`${style.clearIcon} absolute right-0 top-0 pt-6 pr-6 cursor-pointer z-10`}
                   src={CloseModal}
                   alt={'close icon for click'}
                   onClick={props.onClose}

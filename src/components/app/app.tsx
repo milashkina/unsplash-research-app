@@ -1,18 +1,20 @@
 
 import './app.css';
-import {ResearchForm} from "../research-form/research-form";
 import AppProvider from "../../services/appContext";
 import {FC} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {Modal} from "../modal/modal";
 import {CLOSE_DETAILS_MODAL} from "../../services/actions/app-action";
-import {ModalDetails} from "../../pages/modal-details";
+import {ModalDetails} from "../modal-details/modal-details";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {HomePage} from "../../pages/home";
+import {ResultPage} from "../../pages/result-page";
+import {PATH} from "../../utils/constant";
 
 export const App: FC = () => {
 
     const dispatch = useDispatch()
     const modal = useSelector(state => state.modalStore)
-  //  console.log('isOpen:',modal.isOpen)
     const handleClose = () => {
         dispatch({
             type: CLOSE_DETAILS_MODAL
@@ -24,7 +26,13 @@ export const App: FC = () => {
           <header className="App-header"/>
           <main>
               <AppProvider>
-                  <ResearchForm/>
+                  <BrowserRouter>
+                      <Routes>
+                          <Route path={PATH.HOME} element={<HomePage/>}/>
+                          <Route path={PATH.RESULT_PAGE} element={<ResultPage/>}/>
+                      </Routes>
+                  </BrowserRouter>
+
                   {modal.isOpen && <Modal onClose={handleClose}><ModalDetails/></Modal>}
               </AppProvider>
           </main>

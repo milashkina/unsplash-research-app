@@ -1,6 +1,10 @@
-.containerImg {
-    border: 1px solid #EBEBEB;
-}
 .containerImg:hover {
     cursor: pointer;
+}
+.img {
+    border: 1px solid #EBEBEB;
+    width: min-content;
+    max-height: 204px;
+    object-fit: cover;
+    min-height: 114px;
 }
